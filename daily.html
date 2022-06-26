@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yunus Emre Daily</title>
+    <meta name="keyword" content="diarize">
+    <meta name="description" content="Yunus Emre Demirel">
+</head>
+<body>
+            <div class="container1">
+                <div class="container2">
+                    <img class="picture" src="" alt="">
+                    <div class="container3">
+                        <h5 class="title"></h5>
+                        <p class="comment"></p>
+                        <button class="button">Go To History</button>
+                    </div>
+                </div>
+            </div>
+
+    <style>
+        .container2{
+            width: 600px;
+            height: 600px;  
+            display:flex;
+            margin: 10px;
+        }
+        .container3{
+            padding: 10px;
+        }
+        .title{
+            font-size: 20pt;
+            color: brown;
+        }
+        .picture
+        {
+            width: 350px;
+            height: 350px;
+        }
+        .button{
+            color: azure;
+            background-color: black;
+            border: 3px solid brown;
+            border-radius: 5px;
+        }
+    </style>
+    <script>
+        var years=[
+            {
+                date: 1994,
+                image: 'img/1994.jpg',
+                comment: 'Bebeklik'
+            },
+            {
+                date: 2001,
+                image: 'img/2001.jpg',
+                comment: 'Ilkokul'
+            },
+            {
+                date: 2008,
+                image: 'img/2008.png',
+                comment: 'Lise'
+            },
+            {
+                date: 2018,
+                image: 'img/2018.png',
+                comment: 'Universite'
+            }
+        ];
+        setInterval(function()
+        {
+            var index=Math.floor(Math.random()*years.length);
+            var img=document.querySelector('.picture');
+            var title=document.querySelector('.title');
+            var comment=document.querySelector('.comment');
+            img.setAttribute('src',years[index].image);
+            title.textContent='Year: ' + years[index].date;
+            comment.textContent='Comment: ' + years[index].comment;
+        },2000);
+    </script>
+</body>
+</html>
